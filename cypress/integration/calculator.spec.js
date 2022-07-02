@@ -14,6 +14,18 @@ describe("Calculator", () => {
     cy.get('#number4').click();
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '5')
+    cy.get('#operator-subtract').click();
+    cy.get('#number1').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '4')
+    cy.get('#operator-multiply').click();
+    cy.get('#number4').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '16')
+    cy.get('#operator-divide').click();
+    cy.get('#number4').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '4')
   })
 
   it('should allow for multiple operations be chained together', () =>{
@@ -33,16 +45,33 @@ describe("Calculator", () => {
     cy.get('#operator-equals').click();
     cy.get('.display').should('contain', '-3')
     cy.get('#operator_add').click();
-    cy.get('#number1').click();
-    cy.get('#operator_add').click();
-    cy.get('#number2').click();
+    cy.get('#number9').click();
     cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '6')
     cy.get('#operator_add').click();
     cy.get('#number2').click();
     cy.get('#decimal').click();
     cy.get('#number2').click();
     cy.get('#operator-equals').click();
-    cy.get('.display').should('contain', '2.2')
+    cy.get('.display').should('contain', '8.2')
+    cy.get('#operator-multiply').click();
+    cy.get('#number2').click();
+    cy.get('#number7').click();
+    cy.get('#number4').click();
+    cy.get('#number9').click();
+    cy.get('#number7').click();
+    cy.get('#number9').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '2254827.8')
+    cy.get('#operator-multiply').click();
+    cy.get('#number2').click();
+    cy.get('#number7').click();
+    cy.get('#number4').click();
+    cy.get('#number9').click();
+    cy.get('#number7').click();
+    cy.get('#number9').click();
+    cy.get('#operator-equals').click();
+    cy.get('.display').should('contain', '620030293616.2')
   })
 
   it('should allow for a negative number', () =>{
